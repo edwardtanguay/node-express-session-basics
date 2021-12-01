@@ -1,0 +1,8 @@
+@URL = "http://localhost:3003"
+
+### bad login
+GET {{URL}}/login/nnnnnnn
+
+### get user
+GET {{URL}}/user
+

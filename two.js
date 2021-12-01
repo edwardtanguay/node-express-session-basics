@@ -3,7 +3,7 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 
 const app = express();
-const PORT = 5001;
+const PORT = 3003;
 
 app.use(cookieParser());
 app.use(
@@ -27,7 +27,7 @@ const users = [
 		lastName: "Cartwright",
 		email: "ac@mail.com"
 	}
-]
+];
 
 app.get("/login/:username", (req, res) => {
 	const user = users.find(user => user.username === req.params.username);
