@@ -14,6 +14,12 @@ app.use(
 	})
 );
 
+const user = {
+	firstName: "James",
+	lastName: "Anderson",
+	email: "ja@mail.com"
+};
+
 app.get("/login", (req, res) => {
 	req.session.user = user;
 	req.session.save();
@@ -21,7 +27,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/user", (req, res) => {
-	res.send(user);
+	res.send(req.session.user);
 });
 
 app.get("/logout", (req, res) => {
