@@ -1,4 +1,4 @@
-# node_express_session_basics
+# node-express-session-basics
 
 This project shows you the basics of using cookies and sessions in Node/Express to enable a user to login, remain logged in, and log out.
 
