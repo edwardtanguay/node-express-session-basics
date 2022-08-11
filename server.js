@@ -32,6 +32,10 @@ const users = [
     }
 ];
 
+app.get('/', function (req, res) {
+	res.send('session/cookie test');
+})
+
 app.get('/login/:username', (req, res) => {
     const user = users.find((user) => user.username === req.params.username);
     if (user) {
