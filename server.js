@@ -13,7 +13,7 @@ app.use(
     session({
         resave: true,
         saveUninitialized: true,
-        secret: process.env.SESSION_SECRET
+		secret: process.env.SESSION_SECRET
     })
 );
 
@@ -40,6 +40,7 @@ app.get('/login/:username', (req, res) => {
     const user = users.find((user) => user.username === req.params.username);
     if (user) {
         req.session.user = user;
+		req.session.cookie.expires = new Date(Date.now() + 10000); // 10 seconds
         req.session.save();
         res.send(`User logged in: ${JSON.stringify(user)}`);
     } else {
